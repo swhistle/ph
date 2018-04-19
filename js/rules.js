@@ -1,4 +1,5 @@
-import {getElementFromTemplate} from './core';
+import {getElementFromTemplate, showScreen} from './core';
+import game1 from './game1';
 
 const moduleRules = getElementFromTemplate(`
   <header class="header">
@@ -22,7 +23,7 @@ const moduleRules = getElementFromTemplate(`
     </p>
     <form class="rules__form">
       <input class="rules__input" type="text" placeholder="Ваше Имя">
-      <button class="rules__button  continue" type="submit" disabled>Go!</button>
+      <button class="rules__button continue" type="submit" disabled>Go!</button>
     </form>
   </div>
   <footer class="footer">
@@ -36,5 +37,11 @@ const moduleRules = getElementFromTemplate(`
     </div>
   </footer>
 `);
+
+document.addEventListener(`click`, (event) => {
+  if (event.target.classList.contains(`rules__button`)) {
+    showScreen(game1);
+  }
+});
 
 export default moduleRules;

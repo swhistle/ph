@@ -4,9 +4,10 @@ const getElementFromTemplate = (content) => {
   return elem.innerHTML;
 };
 
+const container = document.querySelector(`.central`);
+
 const showScreen = (screen) => {
-  const container = document.querySelector(`.central`);
   container.innerHTML = screen;
-}
+};
 
 export {getElementFromTemplate, showScreen};

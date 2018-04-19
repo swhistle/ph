@@ -1,4 +1,5 @@
-import {getElementFromTemplate} from './core';
+import {getElementFromTemplate, showScreen} from './core';
+import stats from './stats';
 
 const moduleGame3 = getElementFromTemplate(`
   <header class="header">
@@ -54,5 +55,11 @@ const moduleGame3 = getElementFromTemplate(`
     </div>
   </footer>
 `);
+
+// document.addEventListener(`click`, (event) => {
+  // if (event.target.classList.contains(`rules__button`)) {
+  // showScreen(stats);
+  // }
+// });
 
 export default moduleGame3;

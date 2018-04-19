@@ -1,4 +1,5 @@
-import {getElementFromTemplate} from './core';
+import {getElementFromTemplate, showScreen} from './core';
+import rules from './rules';
 
 const moduleGreeting = getElementFromTemplate(`
   <div class="greeting central--blur">
@@ -12,7 +13,11 @@ const moduleGreeting = getElementFromTemplate(`
         Фотореализм обманчив и коварен.<br>
         Помни, главное — смотреть очень внимательно.</p>
     </div>
-    <div class="greeting__continue"><span><img src="img/arrow_right.svg" width="64" height="64" alt="Next"></span></div>
+    <div class="greeting__continue">
+      <span>
+        <img src="img/arrow_right.svg" width="64" height="64" alt="Next" class="greeting__continue-image">
+      </span>
+    </div>
   </div>
   <footer class="footer">
     <a href="https://htmlacademy.ru" class="social-link social-link--academy">HTML Academy</a>
@@ -25,5 +30,11 @@ const moduleGreeting = getElementFromTemplate(`
     </div>
   </footer>
 `);
+
+document.addEventListener(`click`, (event) => {
+  if (event.target.classList.contains(`greeting__continue-image`)) {
+    showScreen(rules);
+  }
+});
 
 export default moduleGreeting;

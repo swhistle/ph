@@ -1,4 +1,5 @@
-import {getElementFromTemplate} from './core';
+import {getElementFromTemplate, showScreen} from './core';
+import greeting from './greeting';
 
 const moduleIntro = getElementFromTemplate(`
   <div class="central__content">
@@ -18,5 +19,14 @@ const moduleIntro = getElementFromTemplate(`
     </div>
   </footer>
 `);
+
+// const link = document.getElementsByClassName(`intro__asterisk`);
+// link[0].addEventListener(`click`, () => showScreen(greeting));
+
+document.addEventListener(`click`, (event) => {
+  if (event.target.classList.contains(`intro__asterisk`)) {
+    showScreen(greeting);
+  }
+});
 
 export default moduleIntro;
