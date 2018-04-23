@@ -38,10 +38,21 @@ const moduleRules = getElementFromTemplate(`
   </footer>
 `);
 
-document.addEventListener(`click`, (event) => {
-  if (event.target.classList.contains(`rules__button`)) {
-    showScreen(game1);
+const link = moduleRules.getElementsByClassName(`rules__button`)[0];
+const input = moduleRules.getElementsByClassName(`rules__input`)[0];
+const form = moduleRules.getElementsByClassName(`rules__form`)[0];
+
+input.addEventListener(`input`, () => {
+  if (input.value.trim().length > 0) {
+    link.disabled = false;
+  } else {
+    link.disabled = true;
   }
+});
+
+form.addEventListener(`submit`, (event) => {
+  event.preventDefault();
+  showScreen(game1);
 });
 
 export default moduleRules;

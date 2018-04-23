@@ -31,10 +31,7 @@ const moduleGreeting = getElementFromTemplate(`
   </footer>
 `);
 
-document.addEventListener(`click`, (event) => {
-  if (event.target.classList.contains(`greeting__continue-image`)) {
-    showScreen(rules);
-  }
-});
+const link = moduleGreeting.getElementsByClassName(`greeting__continue-image`)[0];
+link.addEventListener(`click`, () => showScreen(rules));
 
 export default moduleGreeting;

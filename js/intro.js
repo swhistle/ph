@@ -20,13 +20,7 @@ const moduleIntro = getElementFromTemplate(`
   </footer>
 `);
 
-// const link = document.getElementsByClassName(`intro__asterisk`);
-// link[0].addEventListener(`click`, () => showScreen(greeting));
-
-document.addEventListener(`click`, (event) => {
-  if (event.target.classList.contains(`intro__asterisk`)) {
-    showScreen(greeting);
-  }
-});
+const link = moduleIntro.getElementsByClassName(`intro__asterisk`)[0];
+link.addEventListener(`click`, () => showScreen(greeting));
 
 export default moduleIntro;
