@@ -1,4 +1,4 @@
-import {getElementFromTemplate, showScreen} from './core';
+import {getElementFromTemplate, showScreen} from '../core';
 import rules from './rules';
 
 const moduleGreeting = getElementFromTemplate(`

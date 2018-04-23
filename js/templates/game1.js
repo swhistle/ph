@@ -1,4 +1,4 @@
-import {getElementFromTemplate, showScreen} from './core';
+import {getElementFromTemplate, showScreen} from '../core';
 import game2 from './game2';
 
 const moduleGame1 = getElementFromTemplate(`

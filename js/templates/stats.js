@@ -1,4 +1,4 @@
-import {getElementFromTemplate} from './core';
+import {getElementFromTemplate} from '../core';
 
 const moduleStats = getElementFromTemplate(`
   <header class="header">

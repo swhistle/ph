@@ -7,7 +7,7 @@ const getElementFromTemplate = (content) => {
 const container = document.querySelector(`.central`);
 
 const showScreen = (screen) => {
-  container.innerHTML = "";
+  container.innerHTML = ``;
   container.appendChild(screen);
 };
 

@@ -1,6 +1,6 @@
 import {showScreen} from './core';
-import intro from './intro';
-import greeting from './greeting';
+import intro from './templates/intro';
+import greeting from './templates/greeting';
 
 showScreen(intro);
 
