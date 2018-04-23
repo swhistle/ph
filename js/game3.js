@@ -56,10 +56,12 @@ const moduleGame3 = getElementFromTemplate(`
   </footer>
 `);
 
-// document.addEventListener(`click`, (event) => {
-  // if (event.target.classList.contains(`rules__button`)) {
-  // showScreen(stats);
-  // }
-// });
+const answers = moduleGame3.querySelectorAll(`.game__option`);
+
+answers.forEach((item) => {
+  item.addEventListener(`click`, () => {
+    showScreen(stats);
+  });
+});
 
 export default moduleGame3;

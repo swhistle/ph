@@ -69,10 +69,36 @@ const moduleGame1 = getElementFromTemplate(`
   </footer>
 `);
 
-// document.addEventListener(`click`, (event) => {
-  // if (event.target.classList.contains(`rules__button`)) {
-  //   showScreen(game2);
-  // }
-// });
+const answers1 = moduleGame1.querySelectorAll(`input[name="question1"]`);
+const answers2 = moduleGame1.querySelectorAll(`input[name="question2"]`);
+
+let AmountAnswers1 = 0;
+let AmountAnswers2 = 0;
+
+answers1.forEach((radio) => {
+  radio.addEventListener(`change`, () => {
+    if (radio.checked) {
+      AmountAnswers1 = 1;
+
+      if (AmountAnswers1 + AmountAnswers2 > 1) {
+        showScreen(game2);
+        AmountAnswers1 = AmountAnswers2 = 0;
+      }
+    }
+  });
+});
+
+answers2.forEach((radio) => {
+  radio.addEventListener(`change`, () => {
+    if (radio.checked) {
+      AmountAnswers2 = 1;
+
+      if (AmountAnswers1 + AmountAnswers2 > 1) {
+        showScreen(game2);
+        AmountAnswers1 = AmountAnswers2 = 0;
+      }
+    }
+  });
+});
 
 export default moduleGame1;

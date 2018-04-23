@@ -58,10 +58,14 @@ const moduleGame2 = getElementFromTemplate(`
   </footer>
 `);
 
-// document.addEventListener(`click`, (event) => {
-  // if (event.target.classList.contains(`rules__button`)) {
-//     showScreen(game3);
-  // }
-// });
+const answers = moduleGame2.querySelectorAll(`input[name="question1"]`);
+
+answers.forEach((radio) => {
+  radio.addEventListener(`change`, () => {
+    if (radio.checked) {
+      showScreen(game3);
+    }
+  });
+});
 
 export default moduleGame2;
